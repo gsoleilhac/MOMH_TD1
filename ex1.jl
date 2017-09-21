@@ -21,6 +21,6 @@ for i = 1:10000
 	end
 end
 
-println(YN)
 using PyPlot
-plot(map(x->x.z1, YN), map(x -> x.z2, YN), "rx")
+plot(map(x->x.z1, YN), map(x -> x.z2, YN), "rx"
+!isinteractive() && show()
