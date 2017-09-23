@@ -18,6 +18,7 @@ m = vModel(solver = GLPKSolverMIP())
 
 solve(m, method=:lex)
 
+
 using PyPlot
 YN = getY_N(m)
 plot3D(map(e->e[1], YN), map(e->e[2], YN), map(e->e[3], YN), "bo");
