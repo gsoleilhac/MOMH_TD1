@@ -8,6 +8,7 @@ struct Solution
     y2::Float64
 end
 Solution(x1, x2) = Solution(x1, x2, f1(x1, x2), f2(x1, x2))
+Solution() = begin x1, x2 = 6 * rand() - 3, 6 * rand() - 3 ; Solution(x1, x2) end
 
 import Base.<=
 <=(a1,a2,b1,b2) = a1 <= b1  && a2 < b2 || a1 < b1 && a2 <= b2
@@ -40,8 +41,7 @@ end
 
 YN = Solution[]
 for i = 1:10000
-    x1, x2 = 6 * rand() - 3, 6 * rand() - 3
-    s = Solution(x1, x2, f1(x1, x2), f2(x1, x2))
+    s = Solution()
     if !any(elt -> elt <= s, YN)
         push!(YN, s)
         filter!(elt -> !(elt >= s), YN)
