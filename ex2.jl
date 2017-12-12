@@ -1,4 +1,4 @@
-f1(x1, x2) = -(3(1-x1)^2 * exp(-x1^2 - (x2+1)^2) - 10(x1/5 - x1^3 - x2^5) * exp(-x1^2-x2^2) -3exp(-(x1+2)^2 - x2^2 + x1 + x2/2))
+f1(x1, x2) = -(3(1-x1)^2 * exp(-x1^2 - (x2+1)^2) - 10(x1/5 - x1^3 - x2^5) * exp(-x1^2-x2^2) -3exp(-(x1+2)^2 - x2^2) + 0.5(2x1 + x2))
 f2(x1, x2) = -(3(1+x2)^2 * exp(-x2^2 - (1-x1)^2) - 10(-x2/5 + x2^3 + x1^5) * exp(-x1^2-x2^2) - 3exp(-(2-x2)^2 - x1^2))
 
 struct Solution
@@ -40,7 +40,7 @@ function convexHull(YN)
 end
 
 YN = Solution[]
-for i = 1:10000
+for i = 1:100000
     s = Solution()
     if !any(elt -> elt <= s, YN)
         push!(YN, s)

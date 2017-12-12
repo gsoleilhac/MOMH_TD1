@@ -60,5 +60,5 @@ end;
 @show YN1 == YN2
 
 using PyPlot
-plot(map(x->x.z1, YN2), map(x -> x.z2, YN2), "rx")
+plot(map(x->x.z1, YN2), map(x -> x.z2, YN2), "rx", markersize="2")
 !isinteractive() && show()
